@@ -2,5 +2,4 @@ C:\GitRepository\Project-Library\Library\Library.Service\bin\Library.Service.dll
 C:\GitRepository\Project-Library\Library\Library.Service\bin\Library.Service.pdb
 C:\GitRepository\Project-Library\Library\Library.Service\obj\Debug\Library.Service.dll
 C:\GitRepository\Project-Library\Library\Library.Service\obj\Debug\Library.Service.pdb
-C:\GitRepository\Project-Library\Library\Library.Service\bin\Library.Service.dll.config
 C:\GitRepository\Project-Library\Library\Library.Service\obj\Debug\Library.Service.csprojResolveAssemblyReference.cache
