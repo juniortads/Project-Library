@@ -2,4 +2,3 @@ C:\GitRepository\Project-Library\Library\Library.Infra.Helper\bin\Debug\Library.
 C:\GitRepository\Project-Library\Library\Library.Infra.Helper\bin\Debug\Library.Infra.Helper.pdb
 C:\GitRepository\Project-Library\Library\Library.Infra.Helper\obj\Debug\Library.Infra.Helper.dll
 C:\GitRepository\Project-Library\Library\Library.Infra.Helper\obj\Debug\Library.Infra.Helper.pdb
-C:\GitRepository\Project-Library\Library\Library.Infra.Helper\obj\Debug\Library.Infra.Helper.csprojResolveAssemblyReference.cache
