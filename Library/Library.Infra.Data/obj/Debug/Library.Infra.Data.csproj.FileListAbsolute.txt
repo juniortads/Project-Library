@@ -2,3 +2,14 @@ C:\GitRepository\Project-Library\Library\Library.Infra.Data\bin\Debug\Library.In
 C:\GitRepository\Project-Library\Library\Library.Infra.Data\bin\Debug\Library.Infra.Data.pdb
 C:\GitRepository\Project-Library\Library\Library.Infra.Data\obj\Debug\Library.Infra.Data.dll
 C:\GitRepository\Project-Library\Library\Library.Infra.Data\obj\Debug\Library.Infra.Data.pdb
+C:\GitRepository\Project-Library\Library\Library.Infra.Data\bin\Debug\MongoDB.Bson.dll
+C:\GitRepository\Project-Library\Library\Library.Infra.Data\bin\Debug\MongoDB.Driver.Core.dll
+C:\GitRepository\Project-Library\Library\Library.Infra.Data\bin\Debug\MongoDB.Driver.dll
+C:\GitRepository\Project-Library\Library\Library.Infra.Data\bin\Debug\MongoDB.Driver.Legacy.dll
+C:\GitRepository\Project-Library\Library\Library.Infra.Data\bin\Debug\MongoDB.Bson.xml
+C:\GitRepository\Project-Library\Library\Library.Infra.Data\bin\Debug\MongoDB.Driver.xml
+C:\GitRepository\Project-Library\Library\Library.Infra.Data\bin\Debug\MongoDB.Driver.Legacy.xml
+C:\GitRepository\Project-Library\Library\Library.Infra.Data\obj\Debug\Library.Infra.Data.csprojResolveAssemblyReference.cache
+C:\GitRepository\Project-Library\Library\Library.Infra.Data\bin\Debug\Library.Infra.Data.dll.config
+C:\GitRepository\Project-Library\Library\Library.Infra.Data\bin\Debug\Library.Domain.dll
+C:\GitRepository\Project-Library\Library\Library.Infra.Data\bin\Debug\Library.Domain.pdb

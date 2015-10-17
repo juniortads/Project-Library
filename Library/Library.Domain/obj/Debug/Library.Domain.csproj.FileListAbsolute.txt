@@ -2,3 +2,4 @@ C:\GitRepository\Project-Library\Library\Library.Domain\bin\Debug\Library.Domain
 C:\GitRepository\Project-Library\Library\Library.Domain\bin\Debug\Library.Domain.pdb
 C:\GitRepository\Project-Library\Library\Library.Domain\obj\Debug\Library.Domain.dll
 C:\GitRepository\Project-Library\Library\Library.Domain\obj\Debug\Library.Domain.pdb
+C:\GitRepository\Project-Library\Library\Library.Domain\obj\Debug\Library.Domain.csprojResolveAssemblyReference.cache
