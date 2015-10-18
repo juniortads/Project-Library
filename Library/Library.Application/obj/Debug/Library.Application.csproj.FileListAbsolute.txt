@@ -1,7 +1,7 @@
 C:\GitRepository\Project-Library\Library\Library.Application\bin\Debug\Library.Application.dll
 C:\GitRepository\Project-Library\Library\Library.Application\bin\Debug\Library.Application.pdb
-C:\GitRepository\Project-Library\Library\Library.Application\obj\Debug\Library.Application.dll
-C:\GitRepository\Project-Library\Library\Library.Application\obj\Debug\Library.Application.pdb
 C:\GitRepository\Project-Library\Library\Library.Application\bin\Debug\Library.Domain.dll
 C:\GitRepository\Project-Library\Library\Library.Application\bin\Debug\Library.Domain.pdb
 C:\GitRepository\Project-Library\Library\Library.Application\obj\Debug\Library.Application.csprojResolveAssemblyReference.cache
+C:\GitRepository\Project-Library\Library\Library.Application\obj\Debug\Library.Application.dll
+C:\GitRepository\Project-Library\Library\Library.Application\obj\Debug\Library.Application.pdb
