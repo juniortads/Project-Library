@@ -13,3 +13,7 @@ C:\GitRepository\Project-Library\Library\Library.Infra.Data\bin\Debug\MongoDB.Bs
 C:\GitRepository\Project-Library\Library\Library.Infra.Data\obj\Debug\Library.Infra.Data.csprojResolveAssemblyReference.cache
 C:\GitRepository\Project-Library\Library\Library.Infra.Data\obj\Debug\Library.Infra.Data.dll
 C:\GitRepository\Project-Library\Library\Library.Infra.Data\obj\Debug\Library.Infra.Data.pdb
+C:\GitRepository\Project-Library\Library\Library.Infra.Data\bin\Debug\Library.Infra.Data.Manager.dll
+C:\GitRepository\Project-Library\Library\Library.Infra.Data\bin\Debug\Library.Infra.Data.Ef.dll
+C:\GitRepository\Project-Library\Library\Library.Infra.Data\bin\Debug\Library.Infra.Data.Manager.pdb
+C:\GitRepository\Project-Library\Library\Library.Infra.Data\bin\Debug\Library.Infra.Data.Ef.pdb

@@ -8,7 +8,7 @@ using Library.Domain.Interfaces.Repositories;
 
 namespace Library.Infra.Data.Ef
 {
-    public class RepositoryBase<TEntity> : IRepositoryBase<TEntity> where TEntity : Identifier
+    public class RepositoryEf<TEntity> : IRepositoryBase<TEntity> where TEntity : Identifier
     {
         public void Add(TEntity entity)
         {

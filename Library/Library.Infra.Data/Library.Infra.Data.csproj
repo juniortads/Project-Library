@@ -45,9 +45,9 @@
       <Project>{c223e15c-a611-496e-ba47-032b7746f41d}</Project>
       <Name>Library.Domain</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Library.Infra.Data.MongoDb\Library.Infra.Data.MongoDb.csproj">
-      <Project>{c514b4af-8c5f-4a6b-b935-3f27c9b11d8d}</Project>
-      <Name>Library.Infra.Data.MongoDb</Name>
+    <ProjectReference Include="..\Library.Infra.Data.Manager\Library.Infra.Data.Manager.csproj">
+      <Project>{822a6191-0a2a-4da6-a208-27531a7a1ad1}</Project>
+      <Name>Library.Infra.Data.Manager</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

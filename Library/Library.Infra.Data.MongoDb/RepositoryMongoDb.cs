@@ -12,18 +12,18 @@ using MongoDB.Driver;
 
 namespace Library.Infra.Data.MongoDb
 {
-    public class RepositoryBase<TEntity> : IRepositoryBase<TEntity> where TEntity : Identifier
+    public class RepositoryMongoDb<TEntity> : IRepositoryBase<TEntity> where TEntity : Identifier
     {
         private IMongoDatabase _Database;
         private IMongoCollection<TEntity> _Collection;
 
-        public RepositoryBase()
+        public RepositoryMongoDb()
             : this(GetDatabase())
         {
 
         }
 
-        private RepositoryBase(IMongoDatabase database)
+        private RepositoryMongoDb(IMongoDatabase database)
         {
             _Database = database;
             _Collection = GetCollection();
