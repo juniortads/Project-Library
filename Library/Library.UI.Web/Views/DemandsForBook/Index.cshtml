@@ -1,8 +1,9 @@
-﻿@{
+﻿
+@{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-@model Library.UI.Web.Models.BookViewModel
+@model Library.UI.Web.Models.DemandsForBookViewModel
 
 <script type="text/javascript">
 
@@ -30,16 +31,16 @@
                 <h4 class="panel-title">
                     <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
                         <span class="glyphicon glyphicon-search"></span>
-                        Search Books
+                        My Demands For Book
                     </a>
                 </h4>
             </div>
             <div id="collapseOne" class="panel-collapse collapse in">
                 <div class="panel-body">
 
-                    @using (Ajax.BeginForm("Search", "Book",
-                                new AjaxOptions { UpdateTargetId = "grid-list", HttpMethod = "GET", LoadingElementId = "loading", OnBegin = "beginPaging", OnSuccess = "successPaging", OnFailure = "failurePaging" },
-                                new { id = "frm-search" }))
+                    @using (Ajax.BeginForm("Search", "DemandsForBook",
+                        new AjaxOptions { UpdateTargetId = "grid-list", HttpMethod = "GET", LoadingElementId = "loading", OnBegin = "beginPaging", OnSuccess = "successPaging", OnFailure = "failurePaging" },
+                        new { id = "frm-search" }))
                     {
                         <div class="row">
                             <div class="col-xs-1">
@@ -56,12 +57,13 @@
                         </div>
                         <hr />
                         <div id="grid-list" class="panel panel-default">
-                            @{ Html.RenderPartial("_AjaxSearchBooksList", Model); }
+                            @{ Html.RenderPartial("_AjaxSearchDemandsForBookList", Model); }
                         </div>
-                    }
+                                }
                 </div>
             </div>
         </div>
     </div>
 </div>
 <br />
+

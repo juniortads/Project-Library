@@ -27,7 +27,7 @@ namespace Library.UI.Web.Controllers
             return View(_viewModelBook);
         }
 
-        public ActionResult Search(string acao_filtro, string acao_name)
+        public ActionResult Search(string action_filter, string action_name)
         {
             var lst = new List<Book>();
             //lst = _dispacher.ExecuteCommand<IBookAppService, List<Book>>(service => service.GetAll().ToList());

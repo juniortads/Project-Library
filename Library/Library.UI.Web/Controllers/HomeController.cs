@@ -14,5 +14,11 @@ namespace Library.UI.Web.Controllers
         {
             return View();
         }
+
+        public ActionResult Authenticate(string email, string password)
+        {
+            return RedirectToAction("Index", "Book");
+            //return View("Index");
+        }
     }
 }

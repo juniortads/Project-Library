@@ -1,6 +1,6 @@
 ﻿@{
     ViewBag.Title = "Home";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/_LayoutHome.cshtml";
 }
 <style type="text/css">
     body
@@ -43,10 +43,10 @@
 
 <div class="container">
 
-    <form class="form-signin">
+    <form class="form-signin" action="Home/Authenticate">
         <h2 class="form-signin-heading">Please sign in</h2>
-        <input type="text" class="form-control" placeholder="Email address">
-        <input type="password" class="form-control" placeholder="Password">
+        <input name="email" type="text" class="form-control" placeholder="Email address" value="user@mail.com">
+        <input name="password" type="password" class="form-control" placeholder="Password" value="12345">
         <button class="btn btn-primary" type="submit">Sign in</button>
     </form>
 

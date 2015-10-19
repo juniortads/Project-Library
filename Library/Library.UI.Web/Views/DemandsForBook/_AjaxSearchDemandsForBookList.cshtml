@@ -1,0 +1,17 @@
+﻿@model Library.UI.Web.Models.DemandsForBookViewModel
+
+
+@{
+    Library.UI.Web.Models.DemandsForBookViewModel book = new Library.UI.Web.Models.DemandsForBookViewModel();
+
+}
+
+@{
+    var grid = new WebGrid(source: Model.DemandsForBooks, ajaxUpdateContainerId: "grid_list", selectionFieldName: "selectedRow", canPage: true, rowsPerPage: 20);
+    grid.Pager(WebGridPagerModes.NextPrevious); }
+
+@grid.GetHtml(tableStyle: "table table-striped table-hover table-bordered table-condensed",
+                                headerStyle: "header",
+                                columns: grid.Columns(
+                                grid.Column("Id", "Id"),
+                                grid.Column("Book.Author", "Book.Author")))

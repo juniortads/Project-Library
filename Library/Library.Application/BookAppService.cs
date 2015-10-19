@@ -12,11 +12,21 @@ namespace Library.Application
     public class BookAppService : AppServiceBase<Book>, IBookAppService
     {
         private readonly IBookService _bookService;
+        private readonly IDemandsForBookService _demandsForBookService;
 
-        public BookAppService(IBookService clienteService)
+        public BookAppService(IBookService clienteService, IDemandsForBookService demandsForBookService)
             : base(clienteService)
         {
             _bookService = clienteService;
+            _demandsForBookService = demandsForBookService;
+        }
+        public void CreateNewDemandsForBook(DemandsForBook demand)
+        {
+            _demandsForBookService.Add(demand);
+        }
+        public List<DemandsForBook> GetAllDemandsForBookByStudent(int id)
+        {
+            return _demandsForBookService.GetAll().Where(o => o.Student.Id.Equals(id)).ToList();
         }
     }
 }

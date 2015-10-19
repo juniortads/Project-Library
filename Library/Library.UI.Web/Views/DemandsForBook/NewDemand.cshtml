@@ -1,0 +1,47 @@
+﻿
+@{
+    ViewBag.Title = "NewDemand";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model Library.UI.Web.Models.DemandsForBookViewModel
+<br />
+<hr />
+
+<form id="form_create_demands">
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="form-group">
+                <label>Books</label>
+                @Html.DropDownList("IdBook", (SelectList)ViewBag.LstBooks, null, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="form-group">
+                <label>Date Request</label>
+                <input type="text" readonly="readonly" class="form-control" value="@DateTime.Now.ToString("U")">
+            </div>
+        </div>
+    </div>
+
+    <div style="text-align:left" class="form-actions">
+        <button type="button" onclick="Save();" id="btnSalvar" data-loading-text="Sending ..." class="btn btn-success">Create</button>
+    </div>
+</form>
+<hr />
+<script type="text/javascript">
+    var Save = function () {
+        var form = $('#form_create_demands');
+        console.log(form.serialize());
+        $.ajax({
+            cache: false,
+            async: true,
+            type: "POST",
+            url: '@Url.Action("Insert", "DemandsForBook")',
+            data: form.serialize(),
+            success: function (data) {
+                alert(data);
+            }
+        });
+    };
+</script>
+

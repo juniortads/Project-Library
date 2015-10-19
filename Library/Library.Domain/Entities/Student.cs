@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace Library.Domain.Entities
 {
-    public class Book : Identifier
+    public class Student : Identifier
     {
         public string Name { get; set; }
-        public string Author { get; set; }
-        public string PublishingHouse { get; set; }
+        public DateTime Age { get; set; }
     }
 }

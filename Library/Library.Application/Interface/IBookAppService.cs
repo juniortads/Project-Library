@@ -9,5 +9,8 @@ namespace Library.Application.Interface
 {
     public interface IBookAppService : IAppServiceBase<Book>
     {
+        void CreateNewDemandsForBook(DemandsForBook demand);
+
+        List<DemandsForBook> GetAllDemandsForBookByStudent(int id);
     }
 }

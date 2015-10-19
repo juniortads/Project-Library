@@ -11,6 +11,5 @@ namespace Library.Infra.Data.Repositories
 {
     public class BookRepository : RepositoryBase<Book>, IBookRepository
     {
-        //other specific methods...
     }
 }
