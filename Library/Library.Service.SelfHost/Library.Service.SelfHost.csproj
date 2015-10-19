@@ -1,18 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{10619D1D-1524-423E-994D-FE101E58B13E}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <ProjectGuid>{118E2AD3-9133-4E0D-A1E4-E0E4F491008B}</ProjectGuid>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Library.Infra.IoC</RootNamespace>
-    <AssemblyName>Library.Infra.IoC</AssemblyName>
+    <RootNamespace>Library.Service.SelfHost</RootNamespace>
+    <AssemblyName>Library.Service.SelfHost</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -22,6 +23,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -30,53 +32,74 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.Practices.ServiceLocation">
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\CommonServiceLocator.1.0\lib\NET35\Microsoft.Practices.ServiceLocation.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="Microsoft.Practices.Unity">
+    <Reference Include="Microsoft.Practices.Unity, Version=2.1.505.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Unity.2.1.505.0\lib\NET35\Microsoft.Practices.Unity.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="Microsoft.Practices.Unity.Configuration">
+    <Reference Include="Microsoft.Practices.Unity.Configuration, Version=2.1.505.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Unity.2.1.505.0\lib\NET35\Microsoft.Practices.Unity.Configuration.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.ServiceModel.Activation" />
-    <Reference Include="Unity.Wcf">
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Unity.Wcf, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Unity.Wcf.1.0.0\lib\Unity.Wcf.dll</HintPath>
+      <Private>True</Private>
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ProcessServiceHost.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ProcessServiceHost.Designer.cs">
+      <DependentUpon>ProcessServiceHost.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="WcfServiceFactory.cs" />
+    <Compile Include="ProcessServiceInstaller.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ProcessServiceInstaller.Designer.cs">
+      <DependentUpon>ProcessServiceInstaller.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StartupServer.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.config" />
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Unity.Wcf.README.txt" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Library.Application\Library.Application.csproj">
       <Project>{e75fd698-d2aa-40b4-8960-5ba607b8766c}</Project>
       <Name>Library.Application</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Library.Domain\Library.Domain.csproj">
-      <Project>{c223e15c-a611-496e-ba47-032b7746f41d}</Project>
-      <Name>Library.Domain</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Library.Infra.Data.Manager\Library.Infra.Data.Manager.csproj">
       <Project>{822a6191-0a2a-4da6-a208-27531a7a1ad1}</Project>
       <Name>Library.Infra.Data.Manager</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Library.Infra.Data.MongoDb\Library.Infra.Data.MongoDb.csproj">
-      <Project>{c514b4af-8c5f-4a6b-b935-3f27c9b11d8d}</Project>
-      <Name>Library.Infra.Data.MongoDb</Name>
+    <ProjectReference Include="..\Library.Infra.IoC\Library.Infra.IoC.csproj">
+      <Project>{10619d1d-1524-423e-994d-fe101e58b13e}</Project>
+      <Name>Library.Infra.IoC</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Library.Infra.Data\Library.Infra.Data.csproj">
-      <Project>{ad9dbed7-1efd-4b36-902a-d328086038fe}</Project>
-      <Name>Library.Infra.Data</Name>
-    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Install\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

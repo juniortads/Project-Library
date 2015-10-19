@@ -9,6 +9,22 @@ namespace Library.Infra.Helper.Wcf
 {
     public class CommandDispatcher : ICommandDispatcher
     {
+        public void ExecuteCommand<TService>(Action<TService> command) where TService : class
+        {
+            using (var proxy = new WcfProxy<TService>())
+            {
+                try
+                {
+                    proxy.Open();
+                    command.Invoke(proxy.WcfChanel);
+                }
+                finally
+                {
+                    proxy.Close();
+                }
+            }
+        }
+
         public TResult ExecuteCommand<TService, TResult>(Func<TService, TResult> command) where TService : class
         {
             using (var proxy = new WcfProxy<TService>())

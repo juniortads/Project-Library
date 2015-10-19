@@ -29,19 +29,8 @@ namespace Library.UI.Web.Controllers
 
         public ActionResult Search(string action_filter, string action_name)
         {
-            var lst = new List<Book>();
-            //lst = _dispacher.ExecuteCommand<IBookAppService, List<Book>>(service => service.GetAll().ToList());
-
             _viewModelBook = new BookViewModel();
-
-            for (int i = 0; i < 100; i++)
-            {
-                var books = new Book();
-                books.Id = i;
-                books.Name = "Name Book "+i;
-                lst.Add(books);
-            }
-            _viewModelBook.Books = lst;
+            _viewModelBook.Books = _dispacher.ExecuteCommand<IBookAppService, List<Book>>(service => service.GetAll().ToList());
 
             return PartialView("_AjaxSearchBooksList", _viewModelBook);
         }

@@ -24,39 +24,22 @@ namespace Library.UI.Web.Controllers
         public ActionResult Index()
         {
             _viewModelBook = new DemandsForBookViewModel();
-
-         
-
             return View(_viewModelBook);
         }
 
         public ActionResult NewDemand()
         {
-            var lst = new List<Book>();
-            lst.Add(new Book() { Id = 1, Name = "Jack" });
-            lst.Add(new Book() { Id = 2, Name = "Jack 2" });
-
-            ViewBag.LstBooks = new SelectList(lst.ToArray(), "Id", "Name");
+            var books = new List<Book>();
+            books = _dispacher.ExecuteCommand<IBookAppService, List<Book>>(service => service.GetAll().ToList());
+            ViewBag.LstBooks = new SelectList(books.ToArray(), "Id", "Name");
 
             return View();
         }
 
         public ActionResult Search(string action_filter, string action_name)
         {
-            var lst = new List<DemandsForBook>();
-            //lst = _dispacher.ExecuteCommand<IBookAppService, List<DemandsForBook>>(service => service.GetAllDemandsForBookByStudent(1));
-
             _viewModelBook = new DemandsForBookViewModel();
-
-            for (int i = 0; i < 100; i++)
-            {
-                var demands = new DemandsForBook();
-                demands.Id = i;
-                demands.Book = new Book() { Id = 1, Author = "Jack", Name = "Fuga", PublishingHouse = "Editora" };
-                demands.Student = new Student() { Id = 1010, Age = DateTime.Now, Name = "JR" };
-                lst.Add(demands);
-            }
-            _viewModelBook.DemandsForBooks = lst;
+            _viewModelBook.DemandsForBooks = _dispacher.ExecuteCommand<IBookAppService, List<DemandsForBook>>(service => service.GetAllDemandsForBookByStudent(1));
 
             return PartialView("_AjaxSearchDemandsForBookList", _viewModelBook);
         }

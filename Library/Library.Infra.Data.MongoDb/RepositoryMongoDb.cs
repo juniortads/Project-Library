@@ -14,8 +14,8 @@ namespace Library.Infra.Data.MongoDb
 {
     public class RepositoryMongoDb<TEntity> : IRepositoryBase<TEntity> where TEntity : Identifier
     {
-        private IMongoDatabase _Database;
-        private IMongoCollection<TEntity> _Collection;
+        private static IMongoDatabase _Database;
+        private static IMongoCollection<TEntity> _Collection;
 
         public RepositoryMongoDb()
             : this(GetDatabase())
@@ -31,7 +31,9 @@ namespace Library.Infra.Data.MongoDb
 
         private static IMongoDatabase GetDatabase()
         {
+            var s = GetConnectionString();
             var client = new MongoClient(GetConnectionString());
+            
             return client.GetDatabase(GetDatabaseName());
         }
 
@@ -50,9 +52,9 @@ namespace Library.Infra.Data.MongoDb
             return _Database.GetCollection<TEntity>(typeof(TEntity).Name);
         }
 
-        public void Add(TEntity entity)
+        public async void Add(TEntity entity)
         {
-            _Collection.InsertOneAsync(entity);
+            await _Collection.InsertOneAsync(entity);
         }
 
         public TEntity GetById(int id)

@@ -13,7 +13,7 @@ namespace Library.Application
     {
         private readonly IBookService _bookService;
         private readonly IDemandsForBookService _demandsForBookService;
-
+        
         public BookAppService(IBookService clienteService, IDemandsForBookService demandsForBookService)
             : base(clienteService)
         {
