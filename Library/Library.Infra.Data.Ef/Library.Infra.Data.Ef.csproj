@@ -43,7 +43,6 @@
     <Compile Include="Context\LibraryContext.cs" />
     <Compile Include="Context\LibrarySeedInitializer.cs" />
     <Compile Include="Mappings\BookMap.cs" />
-    <Compile Include="Mappings\StudentMap.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RepositoryEf.cs" />
   </ItemGroup>
