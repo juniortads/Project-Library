@@ -49,9 +49,17 @@ namespace Library.Infra.IoC
                     this.RegisterTypeDataAccessEf();
                     break;
             }
-
+            RegisterTypeStudent(container);
             RegisterTypeBook(container);
             RegisterTypeDemandsForBook(container);
+        }
+
+        private void RegisterTypeStudent(IUnityContainer container)
+        {
+            container
+                .RegisterType<IStudentAppService, StudentAppService>()
+                .RegisterType<IStudentService, StudentService>()
+                .RegisterType<IStudentRepository, StudentRepository>(new HierarchicalLifetimeManager());
         }
 
         private void RegisterTypeBook(IUnityContainer container)

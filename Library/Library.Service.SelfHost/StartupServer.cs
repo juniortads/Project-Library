@@ -19,18 +19,24 @@ namespace Library.Service.SelfHost
             DataAccessManagerFactory.Init(TypeDataAccess.MongoDb);
         }
 
-        private ServiceHost _serviceHost;
+        private ServiceHost _serviceHostBooks;
+        private ServiceHost _serviceHostStudents;
 
         public void Run()
         {
-            var serviceFactory = new WcfServiceFactory();
-            _serviceHost = serviceFactory.CreateServiceHostWithType(typeof(BookAppService));
+            var serviceFactory1 = new WcfServiceFactory();
+            var serviceFactory2 = new WcfServiceFactory();
 
-            _serviceHost.Open();
+            _serviceHostBooks = serviceFactory1.CreateServiceHostWithType(typeof(BookAppService));
+            _serviceHostStudents = serviceFactory2.CreateServiceHostWithType(typeof(StudentAppService));
+
+            _serviceHostBooks.Open();
+            _serviceHostStudents.Open();
         }
         public void Dispose()
         {
-            _serviceHost.Close();
+            _serviceHostBooks.Close();
+            _serviceHostStudents.Close();
         }
     }
 }

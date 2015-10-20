@@ -1,18 +1,37 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Library.Domain.Entities;
 using Library.Domain.Interfaces.Repositories;
+using Library.Infra.Data.Ef.Context;
+using System.Data.Entity;
 
 namespace Library.Infra.Data.Ef
 {
     public class RepositoryEf<TEntity> : IRepositoryBase<TEntity> where TEntity : Identifier
     {
+        protected readonly LibraryContext Context;
+
+        public RepositoryEf():this(new LibraryContext())
+        {
+
+        }
+        private RepositoryEf(LibraryContext context)
+        {
+            Context = context;
+            ConfigureContext();
+        }
+        private void ConfigureContext()
+        {
+            Context.Configuration.ProxyCreationEnabled = false;
+            Context.Configuration.LazyLoadingEnabled = false;
+            Context.Configuration.ValidateOnSaveEnabled = false;
+        }
+
         public void Add(TEntity entity)
         {
-            throw new NotImplementedException();
+            Context.Set<TEntity>().Add(entity);
+            Context.SaveChanges();
         }
 
         public TEntity GetById(int id)
@@ -32,17 +51,24 @@ namespace Library.Infra.Data.Ef
 
         public void Remove(TEntity obj)
         {
-            throw new NotImplementedException();
+            if (Context.Entry(obj).State == EntityState.Detached)
+                Context.Set<TEntity>().Attach(obj);
+            Context.Set<TEntity>().Remove(obj);
         }
 
         public List<TEntity> SearchFor(System.Linq.Expressions.Expression<Func<TEntity, bool>> predicate)
         {
-            throw new NotImplementedException();
+            IQueryable<TEntity> query = Context.Set<TEntity>();
+
+            if (predicate != null)
+                query = query.Where(predicate);
+
+            return query.ToList();
         }
 
         public void Dispose()
         {
-            throw new NotImplementedException();
+            Context.Dispose();
         }
     }
 }

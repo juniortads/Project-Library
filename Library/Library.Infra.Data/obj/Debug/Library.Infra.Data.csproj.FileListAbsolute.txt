@@ -17,3 +17,5 @@ C:\GitRepository\Project-Library\Library\Library.Infra.Data\bin\Debug\Library.In
 C:\GitRepository\Project-Library\Library\Library.Infra.Data\bin\Debug\Library.Infra.Data.Ef.dll
 C:\GitRepository\Project-Library\Library\Library.Infra.Data\bin\Debug\Library.Infra.Data.Manager.pdb
 C:\GitRepository\Project-Library\Library\Library.Infra.Data\bin\Debug\Library.Infra.Data.Ef.pdb
+C:\GitRepository\Project-Library\Library\Library.Infra.Data\bin\Debug\EntityFramework.dll
+C:\GitRepository\Project-Library\Library\Library.Infra.Data\bin\Debug\EntityFramework.xml

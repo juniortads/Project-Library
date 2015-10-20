@@ -13,5 +13,8 @@ namespace Library.Domain.Entities
         public Student Student { get; set; }
 
         public DateTime DateRequest { get; set; }
+
+        public TypeStateDemands TypeStateDemands { get; set; }
+
     }
 }
