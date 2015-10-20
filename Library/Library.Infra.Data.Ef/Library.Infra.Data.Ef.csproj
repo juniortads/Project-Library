@@ -40,6 +40,7 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Context\LibraryContext.cs" />
     <Compile Include="Context\LibrarySeedInitializer.cs" />
     <Compile Include="Mappings\BookMap.cs" />
     <Compile Include="Mappings\StudentMap.cs" />
